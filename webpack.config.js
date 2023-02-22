@@ -4,7 +4,8 @@ const {resolve} = require('path')
 module.exports = {
     target:'web',
     mode:"development",
-    entry:resolve(__dirname+"/index.js"),
+    devtool:"source-map",
+    entry:resolve(__dirname+"/index.jsx"),
 
     resolve: {
         extensions:['.js','.jsx']
@@ -20,7 +21,7 @@ module.exports = {
     module: {
         rules: [
           {
-            test: /\.m?js$/,
+            test: /\.m?js|jsx$/,
             exclude: /node_modules/,
             use: {
               loader: 'babel-loader',
